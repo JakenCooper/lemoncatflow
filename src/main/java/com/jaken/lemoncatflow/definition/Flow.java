@@ -1,18 +1,46 @@
 package com.jaken.lemoncatflow.definition;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.jaken.lemoncatflow.exception.FlowIllegalArgumentException;
 
 public class Flow {
 	private String id;
 	
 	private String name;
 	
-	private Set<Node> nodes;
+//	private Set<Node> nodes = new HashSet<Node>();
+	
+	private List<Node> nodes = new ArrayList<Node>();
 	
 	private Node startNode;
 	
-	private Map<String, Node> nodemap;
+	private Map<String, Node> nodemap = new HashMap<String,Node>();
+	
+	public Flow(String id) {
+		super();
+		this.id = id;
+	}
+
+	public Node getNodeById(String nodeId){
+		return nodemap.get(nodeId);
+	}
+	
+	public void addNode(Node node){
+		nodes.add(node);
+		if(startNode != null){
+			throw new FlowIllegalArgumentException("startnode exists");
+		}
+		if(node.isReadyToBegin()){
+			startNode=node;
+		}
+	}
+	
+	
 	
 	public String getId() {
 		return id;
@@ -34,15 +62,13 @@ public class Flow {
 	}
 
 
-	public Set<Node> getNodes() {
+	public List<Node> getNodes() {
 		return nodes;
 	}
 
-
-	public void setNodes(Set<Node> nodes) {
+	public void setNodes(List<Node> nodes) {
 		this.nodes = nodes;
 	}
-
 
 	public Node getStartNode() {
 		return startNode;

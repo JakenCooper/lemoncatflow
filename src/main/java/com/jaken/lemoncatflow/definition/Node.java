@@ -9,16 +9,55 @@ public class Node {
 	
 	private String name;
 	
+	private String desc;
+	
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	
+	
+
+	public Node() {
+		super();
+	}
+
+
+
 	private List<NodeSec> secs = new ArrayList<NodeSec>();
 	
 	public void addNodeSec(NodeSec ns){
 		secs.add(ns);
 	}
 	
+	private boolean canGetBack;
+	
+	
+	public boolean isCanGetBack() {
+		return canGetBack;
+	}
+
+	public void setCanGetBack(boolean canGetBack) {
+		this.canGetBack = canGetBack;
+	}
+
 	private boolean readyToBegin;
 	
 	private boolean readyToFinish;
 	
+	private boolean canFlowBack;
+	
+	public boolean isCanFlowBack() {
+		return canFlowBack;
+	}
+
+	public void setCanFlowBack(boolean canFlowBack) {
+		this.canFlowBack = canFlowBack;
+	}
+
 	public boolean isReadyToBegin() {
 		return readyToBegin;
 	}

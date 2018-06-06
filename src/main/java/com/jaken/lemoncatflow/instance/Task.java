@@ -6,7 +6,32 @@ public class Task {
 	
 	private String assignee;
 	
+	private String currentAssignee;
+	
+	private String nextNodeId;
+	
 	private Object bussObj;
+	
+	public Task(String nodeId) {
+		super();
+		this.nodeId = nodeId;
+	}
+	
+	public String getCurrentAssignee() {
+		return currentAssignee;
+	}
+
+	public void setCurrentAssignee(String currentAssignee) {
+		this.currentAssignee = currentAssignee;
+	}
+
+	public String getNextNodeId() {
+		return nextNodeId;
+	}
+
+	public void setNextNodeId(String nextNodeId) {
+		this.nextNodeId = nextNodeId;
+	}
 
 	public String getNodeId() {
 		return nodeId;

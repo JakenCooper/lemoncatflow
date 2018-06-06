@@ -7,20 +7,38 @@ import com.jaken.lemoncatflow.definition.Node;
 
 public class FlowInstance {
 
+	private String id;
+	
 	private Flow flow ;
 	
 	private Integer currentStatus;
 	
-
 	private Task currentTask;
 	
 	private Node currentNode;
 	
 	private List<FlowRecord> flowRecords;
 
-	public FlowInstance(Flow flow) {
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Node getCurrentNode() {
+		return currentNode;
+	}
+
+	public void setCurrentNode(Node currentNode) {
+		this.currentNode = currentNode;
+	}
+
+	public FlowInstance(String id,Flow flow) {
 		super();
 		this.flow = flow;
+		this.id=id;
 	}
 
 	public Flow getFlow() {
