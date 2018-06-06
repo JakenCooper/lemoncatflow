@@ -106,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function nodedetail(){
 			var nodeid = arguments[0];
 			var addwin = window.open('http://localhost:8080/lemoncatflow/nodesec/view/add?nodeid='+nodeid+'&flowid='+$('#flowid').val(),'nodeadd'
-				,'width=800,height=400,left=500,top=200,location=no');
+				,'width=1800,height=800,left=50,top=20,location=no');
 		}
 		function rendertable(){
 			$('tbody tr').hover(function(){

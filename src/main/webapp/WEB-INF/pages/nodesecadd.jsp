@@ -118,9 +118,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			<h4>所有节点 </h4> <hr/>
   			<ul id="nodesall" name="allselect">
   				<%
-  					List<Node> nodes = request.getAttribute("nodelst");
+  					List nodes = (List)request.getAttribute("nodelst");
   					for(int i=0;i<nodes.size();i++){
-  						Node node = nodes.get(i);
+  						Node node = (Node)nodes.get(i);
   						%>
   							<li data-id="<%=node.getId()%>"><%=node.getName()%></li>
   						<%
